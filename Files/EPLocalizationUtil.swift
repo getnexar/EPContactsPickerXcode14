@@ -17,7 +17,7 @@ open class EPLocalizationUtil {
   
   open class var country : String? {
     let region = Locale.current.identifier
-    if let index = region.index(of: "_"),
+    if let index = region.firstIndex(of: "_"),
       let nextIndex = region.index(index, offsetBy: 1, limitedBy: region.endIndex) {
       return String(region[nextIndex...])
     }
